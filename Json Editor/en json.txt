@@ -1,0 +1,508 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "memory game",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "InitializeGameIntent",
+                    "slots": [
+                        {
+                            "name": "difficulty",
+                            "type": "Difficulty",
+                            "samples": [
+                                "{difficulty} difficulty",
+                                "In {difficulty} difficulty",
+                                "I want to play in {difficulty}",
+                                "I want to play {difficulty} difficulty",
+                                "{difficulty}"
+                            ]
+                        },
+                        {
+                            "name": "gametype",
+                            "type": "GameTypes",
+                            "samples": [
+                                "Play in {gametype} mode",
+                                "Play in {gametype}",
+                                "I want to play in {gametype}",
+                                "I want to play in {gametype} mode",
+                                "In {gametype} mode",
+                                "In {gametype}",
+                                "{gametype}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "{gametype} {difficulty}",
+                        "I want to play in {difficulty} difficulty and {gametype} mode ",
+                        "I want to play in {difficulty} difficulty {gametype} mode ",
+                        "I want to play in {gametype} mode and {difficulty} difficulty",
+                        "I want to play in {gametype} mode {difficulty} difficulty",
+                        "I want to play in {difficulty}",
+                        "I want to play in {gametype} ",
+                        "I want to play in {gametype} mode",
+                        "I want to play in {difficulty} difficulty",
+                        "{gametype}",
+                        "{difficulty}",
+                        "{difficulty} {gametype}"
+                    ]
+                },
+                {
+                    "name": "ScoreIntent",
+                    "slots": [
+                        {
+                            "name": "SequenceColors",
+                            "type": "Colors",
+                            "multipleValues": {
+                                "enabled": true
+                            }
+                        }
+                    ],
+                    "samples": [
+                        "{SequenceColors}"
+                    ]
+                },
+                {
+                    "name": "InformationIntent",
+                    "slots": [
+                        {
+                            "name": "rules",
+                            "type": "Rules"
+                        }
+                    ],
+                    "samples": [
+                        "Can you tell me more",
+                        "I want the {rules}",
+                        "Information about the game",
+                        "I want more information",
+                        "information",
+                        "tell me the {rules}",
+                        "{rules}"
+                    ]
+                },
+                {
+                    "name": "RankingIntent",
+                    "slots": [
+                        {
+                            "name": "action",
+                            "type": "Action",
+                            "samples": [
+                                "{name}"
+                            ]
+                        },
+                        {
+                            "name": "name",
+                            "type": "AMAZON.FirstName",
+                            "samples": [
+                                "My name is {name} {lastName} ",
+                                "Call me {name} {lastName}",
+                                "Register by {name} {lastName}",
+                                "Register by {name}",
+                                "Call me {name} ",
+                                "My name is {name}",
+                                "{name}"
+                            ],
+                            "multipleValues": {
+                                "enabled": false
+                            }
+                        },
+                        {
+                            "name": "lastName",
+                            "type": "AMAZON.FirstName",
+                            "samples": [
+                                "My name is {name} {lastName}",
+                                "My last name is {lastName}",
+                                "It's {lastName}",
+                                "{lastName}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "{action} {name} {lastName} score",
+                        "{action} {name} {lastName} ranking",
+                        "{action} {name} {lastName}",
+                        "{action} my points",
+                        "{action} my ranking",
+                        "{action} my score"
+                    ]
+                },
+                {
+                    "name": "ShowRankingIntent",
+                    "slots": [
+                        {
+                            "name": "playerName",
+                            "type": "AMAZON.FirstName"
+                        },
+                        {
+                            "name": "playerLastName",
+                            "type": "AMAZON.FirstName"
+                        }
+                    ],
+                    "samples": [
+                        "Tell the ranking list",
+                        "Tell me the ranking",
+                        "Show ranking",
+                        "Show my score {playerName} {playerLastName}",
+                        "Show scores"
+                    ]
+                },
+                {
+                    "name": "QuestionIntent",
+                    "slots": [],
+                    "samples": [
+                        "I'm ready",
+                        "question",
+                        "ready",
+                        "tell me the question"
+                    ]
+                },
+                {
+                    "name": "ScoreNumberIntent",
+                    "slots": [
+                        {
+                            "name": "num",
+                            "type": "AMAZON.NUMBER"
+                        }
+                    ],
+                    "samples": [
+                        "it shown {num} times ",
+                        "{num} times",
+                        "I think the answer is {num}",
+                        "I think it's {num}",
+                        "{num}"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "Colors",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "yellow"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "blue"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "green"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "red"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "GameTypes",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "Visual"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Voice"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Difficulty",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "medium"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "hard"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "easy"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Rules",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "rules"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Action",
+                    "values": [
+                        {
+                            "id": "0",
+                            "name": {
+                                "value": "register"
+                            }
+                        },
+                        {
+                            "id": "1",
+                            "name": {
+                                "value": "delete"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "InitializeGameIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "difficulty",
+                            "type": "Difficulty",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.674534357665.1176550846709"
+                            }
+                        },
+                        {
+                            "name": "gametype",
+                            "type": "GameTypes",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.674534357665.1564565231791"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ScoreIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "SequenceColors",
+                            "type": "Colors",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
+                },
+                {
+                    "name": "RankingIntent",
+                    "confirmationRequired": true,
+                    "prompts": {
+                        "confirmation": "Confirm.Intent.1290689015273"
+                    },
+                    "slots": [
+                        {
+                            "name": "action",
+                            "type": "Action",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1290689015273.565527588355"
+                            }
+                        },
+                        {
+                            "name": "name",
+                            "type": "AMAZON.FirstName",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1290689015273.588433753371"
+                            }
+                        },
+                        {
+                            "name": "lastName",
+                            "type": "AMAZON.FirstName",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1635643235269.1556513623483"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ScoreNumberIntent",
+                    "confirmationRequired": true,
+                    "prompts": {
+                        "confirmation": "Confirm.Intent.815224164776"
+                    },
+                    "slots": [
+                        {
+                            "name": "num",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "ALWAYS"
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.674534357665.1564565231791",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Can you tell me the game mode you want to play"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Hmmm what game mode do you want to play?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "You want to play in {difficulty} difficulty but in what game mode?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Alright, tell me the game mode you want to play"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Which mode do you want to play?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.674534357665.1176550846709",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Alright, tell me the difficulty you want to play"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "You want to play in {gametype} mode but in what difficulty?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Hmmm what difficulty do you want to play?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Can you tell me the difficulty you want to play"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Which difficulty do you want to play?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Intent.88064596503",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "{SequenceColors}"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1290689015273.588433753371",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What's your first name?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "What name should I {action} ?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Can you tell me your name?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "What's your name?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Intent.1290689015273",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Your name is {name} {lastName} ?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1290689015273.565527588355",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What do you wanna do, register, delete, show or highest score?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1635643235269.1556513623483",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Could you tell me your last name {name} ?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Could you tell me your last name?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "What's your last name {name} ?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "What's your last name?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Intent.815224164776",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Are you sure it's {num} ?"
+                    }
+                ]
+            }
+        ]
+    }
+}

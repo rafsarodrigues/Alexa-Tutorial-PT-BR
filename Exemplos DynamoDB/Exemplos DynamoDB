@@ -1,0 +1,75 @@
+https://www.youtube.com/watch?v=UuX2AFq_OkU
+
+--INSERT
+
+#importing packages
+import json
+import boto3
+#function definition
+def lambda_handler(event,context):
+    dynamodb = boto3.resource('dynamodb')
+    #table name
+    table = dynamodb.Table('users_score')
+    #inserting values into table
+    response = table.put_item(
+       Item={
+            'username': 'bhagdsdsi',
+            'score':3000
+        }
+    )
+    return response
+
+--GET
+
+#importing packages
+import json
+import boto3
+#function definition
+def lambda_handler(event,context):
+    dynamodb = boto3.resource('dynamodb')
+    #table name
+    table = dynamodb.Table('users_score')
+    users = table.scan()['Items']
+    users_test = ""
+    for users_l in users:
+        if "bhagiii" == users_l['username']:
+            users_test += users_l['username'] + " - > " + users_l['score']
+    print(users_test)
+    return None
+	
+--UPDATE
+
+#importing packages
+import json
+import boto3
+#function definition
+def lambda_handler(event,context):
+    dynamodb = boto3.resource('dynamodb')
+    #table name
+    table = dynamodb.Table('users_score')
+    #inserting values into table
+    response = table.update_item(
+        Key={"username":"bhagdsdsi"},
+        UpdateExpression="SET score= :s",
+        ExpressionAttributeValues={':s':100},
+        #Só precisa desse se for utilizar o response
+        ReturnValues="UPDATED_NEW"
+    )
+    return response['Attributes']
+	
+--DELETE
+
+#importing packages
+import json
+import boto3
+#function definition
+def lambda_handler(event,context):
+    dynamodb = boto3.resource('dynamodb')
+    #table name
+    table = dynamodb.Table('users_score')
+    #inserting values into table
+    response = table.delete_item(
+        Key={"username":"bhagdsdsi"},
+        ReturnValues="ALL_OLD"
+    )
+    return response['Attributes']
