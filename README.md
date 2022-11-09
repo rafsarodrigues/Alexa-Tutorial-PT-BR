@@ -461,25 +461,248 @@ void publishReturnMessage()
 
 ## DynamoDB
 
+&ensp;&ensp;&ensp;&enspA skill está utilizando um servidor hospedado na Lambda com isso alguns recursos da Alexa não estão disponíveis, desta forma se faz necessário criar permissões de uso para a skill ter acesso a outras funcionalidades uma delas seria a persistência dos dados, neste caso será utilizado outro serviço da Amazon chamado de DynamoDB.
+&ensp;&ensp;&ensp;&enspEm suma, o que será feito é: criar um usuário com permissão de acesso ao DynamoDB, criar uma tabela, adicionar a permissão na função.
 
 ![Figura 42 - Página inicial DynamoDB](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem42.png)
+
+&ensp;&ensp;&ensp;&ensp;Criar a tabela informando o nome desejado.
+
 ![Figura 43 - Criação de tabela](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem43.png)
+
+&ensp;&ensp;&ensp;&ensp;No Lambda clicar no hiperlink da permissão para abrir a página de edição.
+
 ![Figura 44 - Permissão](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem44.png)
+
+&ensp;&ensp;&ensp;&ensp;Deve ser adicionado a permissão para acesso ao DynamoDB, desta forma clicar na opção “Add permissions -> Attach policies”.
+
 ![Figura 45 - Página de permissões](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem45.png)
+
+&ensp;&ensp;&ensp;&ensp;Procurar pela política “AmazonDynamoDBFullAccess” e clicar na opção “Attach policies”.
+
 ![Figura 46 - Adicionando nova permissão](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem46.png)
+
+&ensp;&ensp;&ensp;&ensp;Voltar a página do Lambda, e verificar se será apresentado na lista de permissões o DynamoDB.
+
 ![Figura 47 - Lista de permissões](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem47.png)
+
+## Exemplos de utilização DynamoDB
+
+&ensp;&ensp;&ensp;&ensp;Neste item será mostrado alguns exemplos de uso utilizando o DynamoDB, os exemplos são de inserir, atualizar, consultar e excluir dados. Esses exemplos estão disponibilizados no github e são baseados na documentação oficial que pode ser encontrado no site abaixo:  
+
+<p align="center"> https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html#dynamodb </p>
+
+### Inserir
+
+&ensp;&ensp;&ensp;&ensp;Exemplo para inserir um novo registro na tabela no Quadro 2.
+
+~~~Python
+--INSERT
+
+#importing packages
+import json
+import boto3
+#function definition
+def lambda_handler(event,context):
+    dynamodb = boto3.resource('dynamodb')
+    #table name
+    table = dynamodb.Table('users_score')
+    #inserting values into table
+    response = table.put_item(
+       Item={
+            'username': 'Teste',
+            'score':3000
+        }
+    )
+    return response
+~~~
+
+### Atualizar
+
+&ensp;&ensp;&ensp;&ensp;Exemplo para atualizar um dado na tabela no Quadro 3.
+
+~~~Python
+--UPDATE
+
+#importing packages
+import json
+import boto3
+#function definition
+def lambda_handler(event,context):
+    dynamodb = boto3.resource('dynamodb')
+    #table name
+    table = dynamodb.Table('users_score')
+    #inserting values into table
+    response = table.update_item(
+        Key={"username":"Teste"},
+        UpdateExpression="SET score= :s",
+        ExpressionAttributeValues={':s':100},
+        #Só precisa desse se for utilizar o response
+        ReturnValues="UPDATED_NEW"
+    )
+    return response['Attributes']
+~~~
+
+### Consultar
+
+&ensp;&ensp;&ensp;&ensp;Exemplo para retorar um dado na tabela no Quadro 4.
+
+~~~Python
+--GET
+
+#importing packages
+import json
+import boto3
+#function definition
+def lambda_handler(event,context):
+    dynamodb = boto3.resource('dynamodb')
+    #table name
+    table = dynamodb.Table('users_score')
+    users = table.scan()['Items']
+    users_test = ""
+    for users_l in users:
+        if "bhagiii" == users_l['username']:
+            users_test += users_l['username'] + " - > " + users_l['score']
+    print(users_test)
+    return None
+~~~
+
+###
+
+&ensp;&ensp;&ensp;&ensp;Exemplo para excluir um dado na tabela no Quadro 5.
+
+~~~Python
+--DELETE
+
+#importing packages
+import json
+import boto3
+#function definition
+def lambda_handler(event,context):
+    dynamodb = boto3.resource('dynamodb')
+    #table name
+    table = dynamodb.Table('users_score')
+    #inserting values into table
+    response = table.delete_item(
+        Key={"username":"Teste"},
+        ReturnValues="ALL_OLD"
+    )
+    return response['Attributes']
+~~~
+
+## Criação de uma “coisa “
+
+&ensp;&ensp;&ensp;&ensp;Conforme AMEBA, na arquitetura, ESP32 pertence ao bloco "Coisas" superior esquerdo. Um canal seguro TLS será estabelecido entre "Things" e o MQTT Message Broker. Em seguida, "coisa" e "Message Broker" se comunicam usando o Protocolo MQTT por meio desse canal seguro. Atrás do "Message Broker", as "Thing Shadows" mantêm mensagens temporariamente quando o ESP32 está offline, e envia a mensagem de controle para o ESP32 na próxima vez que ele estiver conectado. O "Mecanismo de Regras" permite que você coloque restrições ao comportamento das Coisas ou conecte Coisas a outros serviços da Amazon.  
+&ensp;&ensp;&ensp;&ensp;Na Figura 48 se encontra uma exemplificação desta arquitetura.
+
 ![Figura 48 - Estrutura do AWS IoT](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem48.png)
+
+&ensp;&ensp;&ensp;&ensp;A partir da Figura 49 está descrito o passo-a-passo de como criar uma “coisa”, ou um novo dispositivo, à função em AWS IoT, terminando na Figura X.  
+&ensp;&ensp;&ensp;&ensp;Em suma, os passos são os seguintes: Registro no Console do AWS IoT; Criação/registro de uma "Coisa" no console; Criação de um certificado TLS X.509; Criação de uma política para acessar os tópicos da AWS IoT; Anexando a Política ao Certificado; testes via MQTT.  
+
+*******
++ Passo 1: Acessar a página do IoT Core, acessar o item “Things” e utilizar a opção “Create things”.  
 ![Figura 49 - Página inicial AWS IoT](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem49.png)
+
++ Passo 2: Utilizar a opção “Create single thing” e clicar em “Next”.  
 ![Figura 50 - Criação da “coisa”](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem50.png)
+
++ Passo 3: Inserir um novo nome e demais valores são opcionais.  
 ![Figura 51 - Propriedades da “coisa”](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem51.png)
+
++ Passo 4: Utilizar a opção “Auto-generate a new certificate (recommended)” e clicar em “Next”.  
 ![Figura 52 - Escolha do certificado](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem52.png)
+
++ Passo 5: Criar uma política.  
 ![Figura 53 - Política da “coisa”](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem53.png)
+
++ Passo 6: Inserir o código do Quadro 1 e alterar com os dados de região, ID da conta e alterar o nome ESP32_SP para o nome da “coisa”.  
 ![Figura 54 - Criação de política](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem54.png)
+
+~~~JSON
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "iot:Connect",
+      "Resource": "arn:aws:iot:REGION:ACCOUNT_ID:client/MyNewESP32"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iot:Subscribe",
+      "Resource": "arn:aws:iot:REGION:ACCOUNT_ID:topicfilter/esp32/sub"
+    },
+	{
+      "Effect": "Allow",
+      "Action": "iot:Receive",
+      "Resource": "arn:aws:iot:REGION:ACCOUNT_ID:topic/esp32/sub"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iot:Publish",
+      "Resource": "arn:aws:iot:REGION:ACCOUNT_ID:topic/esp32/pub"
+    }
+  ]
+}
+~~~
+
++ Passo 7: Vincular a política e criar a “coisa”  
 ![Figura 55 - Vínculo da política](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem55.png)
+
++ Passo 8: Download de todos os certificados, esses certificados são os citados dentro do item “Secrets.h” para serem inseridos no código do Arduino.  
 ![Figura 56 - Download dos certificados](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem56.png)
+
+*******
+
+## Testes MQTT
+
+&ensp;&ensp;&ensp;&ensp;Nas subseções será apresentado como realizar testes via MQTT dentro do serviço IoT Core.
+
+### Variáveis
+
+&ensp;&ensp;&ensp;&ensp;Entrar no arquivo “Secrets.h” do Arduino e atualizar as seguintes informações:  
++	THINGNAME: Nome da “coisa” criada.  
++	AWS_IOT_ENDPOINT[] : Este valor pode ser encontrado dentro do item “Settings” da página do IoT Core, conforme Figura 57.  
++	AWS_CERT_CA[],AWS_CERT_CRT[] e AWS_CERT_PRIVATE[]: Conteúdo se encontra dentro dos arquivos baixados ao criar a “coisa”.  
+Após isso compilar e utilizar a opção “Upload” para carregar o código dentro da memória do ESP32.  
+
 ![Figura 57 – Endpoint IoT Core](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem57.png)
+
+### Ferramenta de testes MQTT Lambda
+
+&ensp;&ensp;&ensp;&ensp;Após acessar a página do IoT Core, acessar o item “MQTT test client”. E configurar os tópicos conforme Figura 58 e Figura 59.
+
 ![Figura 58 - Configuração do tópico MQTT](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem58.png)
+
 ![Figura 59 - Configuração do tópico MQTT](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem59.png)
+
+&ensp;&ensp;&ensp;&ensp;Para realizar o teste basta inserir uma nova mensagem e utilizar a opção “Publish”, dentro do Arduino é possível ver os logs pelo canal escolhido e posteriormente a isto será enviado uma mensagem de sucesso novamente para a Amazon. Segue figuras com esse processo.
+
 ![Figura 60 - Envio da mensagem ao Arduino](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem60.png)
+
 ![Figura 61 - Log de recebimento no Arduino](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem61.png)
+
 ![Figura 62 - Log de sucesso IoT Core](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem62.png)
+
+# Referências
+
+https://developer.amazon.com/en-US/docs/alexa/custom-skills/choose-the-invocation-name-for-a-custom-skill.html  
+https://apl.ninja  
+https://developer.amazon.com/en-US/docs/alexa/alexa-presentation-language/apl-commands.html  
+https://dabblelab.com/tutorials  
+https://apl.ninja/xeladotbe/you-win-0mfh  
+https://apl.ninja/document/xeladotbe/jeff-blankenburgs-twitch-stream-intro-k8a9  
+https://aws.amazon.com/iot-core/  
+https://aws.amazon.com/cloudwatch/features/#:~:text=CloudWatch%20enables%20you%20to%20monitor,building%20applications%20and%20business%20value.  
+https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html  
+https://developer.amazon.com/en-US/docs/alexa/custom-skills/steps-to-build-a-custom-skill.html  
+https://www.amebaiot.com/en/ameba-arduino-amazon-alexa/  
+https://aws.amazon.com/pt/lambda/?nc2=h_m1  
+https://developer.amazon.com/en-US/docs/alexa/ask-overviews/what-is-the-alexa-skills-kit.html  
+https://github.com/alexa-samples/skill-sample-python-first-skill/tree/master/module-4  
+https://medium.com/captech-corner/automating-a-tower-fan-with-alexa-skills-aws-lambda-aws-iot-and-an-esp32-ad0d4ba1da22  
+https://developer.amazon.com/en-US/docs/alexa/custom-skills/choose-the-invocation-name-for-a-custom-skill.html  
+https://developer.amazon.com/en-US/docs/alexa/custom-skills/create-intents-utterances-and-slots.html  
+https://www.youtube.com/watch?v=8zhv6GDSDE8  
+https://www.amebaiot.com.cn/en/amebad-arduino-aws-shadow/  
