@@ -546,7 +546,8 @@ void publishReturnMessage()
 &ensp;&ensp;&ensp;&enspA skill está utilizando um servidor hospedado na Lambda com isso alguns recursos da Alexa não estão disponíveis, desta forma se faz necessário criar permissões de uso para a skill ter acesso a outras funcionalidades uma delas seria a persistência dos dados, neste caso será utilizado outro serviço da Amazon chamado de DynamoDB.
 &ensp;&ensp;&ensp;&enspEm suma, o que será feito é: criar um usuário com permissão de acesso ao DynamoDB, criar uma tabela, adicionar a permissão na função.
 
-<p align="center">Figura 42 - Página inicial DynamoDB</p>
+<p align="center">Figura 42 - Página inicial DynamoDB</p>  
+
 ![Figura 42 - Página inicial DynamoDB](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem42.png)
 
 &ensp;&ensp;&ensp;&ensp;Criar a tabela informando o nome desejado.
