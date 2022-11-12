@@ -144,7 +144,7 @@
                             "name": "name",
                             "type": "AMAZON.FirstName",
                             "samples": [
-                                "Registre o nome {name}",
+                                "Registre como {name}",
                                 "Me chame de {name}",
                                 "Meu nome é {name}",
                                 "{name}"
@@ -157,6 +157,8 @@
                             "name": "lastName",
                             "type": "AMAZON.FirstName",
                             "samples": [
+                                "Meu sobrenome é {lastName}",
+                                "Seria {lastName}",
                                 "É {lastName}",
                                 "Meu último nome é {lastName}",
                                 "{lastName}"
@@ -169,7 +171,8 @@
                         "{action} {name} {lastName} ranking",
                         "{action} {name} {lastName}",
                         "{action} meus pontos",
-                        "{action} meu ranking"
+                        "{action} meu ranking",
+                        "{action} my score"
                     ]
                 },
                 {
@@ -258,12 +261,18 @@
                     "values": [
                         {
                             "name": {
-                                "value": "Visual"
+                                "value": "Visual",
+                                "synonyms": [
+                                    "Lâmpadas"
+                                ]
                             }
                         },
                         {
                             "name": {
-                                "value": "Áudio"
+                                "value": "Voz",
+                                "synonyms": [
+                                    "Áudio"
+                                ]
                             }
                         }
                     ]
@@ -305,19 +314,21 @@
                     "name": "Action",
                     "values": [
                         {
-                            "id": "0",
                             "name": {
                                 "value": "Registrar",
                                 "synonyms": [
+                                    "adicione",
+                                    "registre",
                                     "adicionar"
                                 ]
                             }
                         },
                         {
-                            "id": "1",
                             "name": {
                                 "value": "Excluir",
                                 "synonyms": [
+                                    "retire",
+                                    "exclua",
                                     "deletar"
                                 ]
                             }
@@ -468,8 +479,10 @@
                 },
                 {
                     "name": "ScoreNumberIntent",
-                    "confirmationRequired": false,
-                    "prompts": {},
+                    "confirmationRequired": true,
+                    "prompts": {
+                        "confirmation": "Confirm.Intent.815224164776"
+                    },
                     "slots": [
                         {
                             "name": "num",
@@ -552,11 +565,11 @@
                 "variations": [
                     {
                         "type": "PlainText",
-                        "value": "Registro qual nome?"
+                        "value": "Poderia me falar o seu nome"
                     },
                     {
                         "type": "PlainText",
-                        "value": "Pode me dizer o seu nome"
+                        "value": "Qual nome devo registrar?"
                     },
                     {
                         "type": "PlainText",
@@ -578,11 +591,7 @@
                 "variations": [
                     {
                         "type": "PlainText",
-                        "value": "Você quer registrar ou excluir?"
-                    },
-                    {
-                        "type": "PlainText",
-                        "value": "O que você quer fazer. Registar ou excluir?"
+                        "value": "O que você quer fazer, registrar ou excliuir ?"
                     }
                 ]
             },
@@ -591,11 +600,15 @@
                 "variations": [
                     {
                         "type": "PlainText",
-                        "value": "Qual é o seu último nome?"
+                        "value": "Poderia me falar o seu último nome"
                     },
                     {
                         "type": "PlainText",
                         "value": "Qual é o seu último nome {name} ?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Qual é o seu último nome?"
                     }
                 ]
             },
@@ -604,7 +617,7 @@
                 "variations": [
                     {
                         "type": "PlainText",
-                        "value": "Você confirma que é {num} ?"
+                        "value": "Você confirmar que é {num} ?"
                     },
                     {
                         "type": "PlainText",
