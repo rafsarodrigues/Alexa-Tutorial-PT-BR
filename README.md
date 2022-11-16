@@ -40,27 +40,27 @@ Universidade Regional de Blumenau (FURB) – Blumenau, SC – Brazil</p>
 
 <p align="center">Figura 1 - Passo 1 -> Configurando Arduino para o ESP32</p>  
 
-![Figura 1 - Passo 1 -> Configurando Arduino para o ESP32](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem1.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem1.png" alt="Figura 1 - Passo 1 -> Configurando Arduino para o ESP32" align="center"></p>
 
 <p align="center">Figura 2 - Passo 2 -> Configurando Arduino para o ESP32 (continuação)</p>  
 
-![Figura 2 - Passo 2 -> Configurando Arduino para o ESP32 (continuação)](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem2.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem2.png" alt="Figura 2 - Passo 2 -> Configurando Arduino para o ESP32 (continuação)" align="center"></p>
 
 <p align="center">Figura 3 - Passo 3 -> Instalando pacote ESP32</p>  
 
-![Figura 3 - Passo 3 -> Instalando pacote ESP32](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem3.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem3.png" alt="Figura 3 - Passo 3 -> Instalando pacote ESP32" align="center"></p>
 
 <p align="center">Figura 4 - Passo 4 -> Selecionando placa ESP32</p>  
 
-![Figura 4 - Passo 4 -> Selecionando placa ESP32](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem4.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem4.png" alt="Figura 4 - Passo 4 -> Selecionando placa ESP32" align="center"></p>
 
 <p align="center">Figura 5 - Passo 5 -> Instalando biblioteca MQTT</p>  
 
-![Figura 5 - Passo 5 -> Instalando biblioteca MQTT](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem5.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem5.png" alt="Figura 5 - Passo 5 -> Instalando biblioteca MQTT" align="center"></p>
 
 <p align="center">Figura 6 - Passo 6 -> Instalando biblioteca ArduinoJson</p>  
 
-![Figura 6 - Passo 6 -> Instalando biblioteca ArduinoJson](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem6.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem6.png" alt="Figura 6 - Passo 6 -> Instalando biblioteca ArduinoJson"></p>
 
 # Código Arduino IDE
 
@@ -285,7 +285,7 @@ void publishReturnMessage()
 
 <p align="center">Figura 7 - Diagrama de Atividades</p>  
 
-![Figura 7 - Diagrama de Atividades](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem7.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem7.png" alt="Figura 7 - Diagrama de Atividades"></p>
 
 &ensp;&ensp;&ensp;&ensp;Conforme documentação oficial da Amazon o fluxo de trabalho a seguir demonstra como uma habilidade do Alexa funciona. Neste exemplo, o usuário invoca uma habilidade simples do Alexa chamada "Hello World".
 
@@ -299,7 +299,7 @@ void publishReturnMessage()
 
 <p align="center">Figura 8 - Diagrama da skill Hello World</p>  
 
-![Figura 8 - Diagrama da skill Hello World](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem8.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem8.png" alt="Figura 8 - Diagrama da skill Hello World"></p>
 
 &ensp;&ensp;&ensp;&ensp;Esta documentação você pode encontrar no link:  
 <p align="center"> https://developer.amazon.com/en-US/docs/alexa/workshops/build-an-engaging-skill/why-build/index.html#how-an-alexa-skill-works   </p>
@@ -342,70 +342,70 @@ void publishReturnMessage()
 
 <p align="center">Figura 9- Página inicial do site da Amazon Alexa</p>  
 
-![Figura 9- Página inicial do site da Amazon Alexa](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem9.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem9.png" alt="Figura 9- Página inicial do site da Amazon Alexa"></p>
 
 <p align="center">Figura 10 - Página de login para o console do desenvolvedor</p>  
 
-![Figura 10 - Página de login para o console do desenvolvedor](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem10.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem10.png" alt="Figura 10 - Página de login para o console do desenvolvedor"></p>
 
 <p align="center">Figura 11 - Página para gerenciamos das skills</p>  
 
-![Figura 11 - Página para gerenciamos das skills](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem11.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem11.png" alt="Figura 11 - Página para gerenciamos das skills"></p>
 
 <p align="center">Figura 12 - Selecionar o idioma e modelo Custom</p>  
 
-![Figura 12 - Selecionar o idioma e modelo Custom](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem12.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem12.png" alt="Figura 12 - Selecionar o idioma e modelo Custom"></p>
 
 <p align="center">Figura 13 – Selecionar a linguagem de programação</p>  
 
-![Figura 13 – Selecionar a linguagem de programação](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem13.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem13.png" alt="Figura 13 – Selecionar a linguagem de programação"></p>
 
 <p align="center">Figura 14 - Selecionar “Start from Scratch”</p>  
 
-![Figura 14 - Selecionar “Start from Scratch”](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem14.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem14.png" alt="Figura 14 - Selecionar “Start from Scratch"></p>
 
 <p align="center">Figura 15 - Inserindo um nome de invocação da skill</p>  
 
-![Figura 15 - Inserindo um nome de invocação da skill](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem15.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem15.png" alt="Figura 15 - Inserindo um nome de invocação da skill"></p>
 
 <p align="center">Figura 16 - Adicionando novo intent</p>  
 
-![Figura 16 - Adicionando novo intent](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem16.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem16.png" alt="Figura 16 - Adicionando novo intent"></p>
 
 <p align="center">Figura 17 - Criando um intent personalizável</p>  
 
-![Figura 17 - Criando um intent personalizável](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem17.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem17.png" alt="Figura 17 - Criando um intent personalizável"></p>
 
 <p align="center">Figura 18 - Criando um intent e slot personalizável</p>  
 
-![Figura 18 - Criando um intent e slot personalizável](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem18.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem18.png" alt="Figura 18 - Criando um intent e slot personalizável"></p>
 
 <p align="center">Figura 19 - Adicionando valores no slot personalizado</p>  
 
-![Figura 19 - Adicionando valores no slot personalizado](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem19.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem19.png" alt="Figura 19 - Adicionando valores no slot personalizado"></p>
 
 &ensp;&ensp;&ensp;&ensp;No item apresentado na Figura 20 você deverá cadastrar qual declaração para ativar essa intenção.  
 
 <p align="center">Figura 20 - Inserindo uma declaração</p>  
 
-![Figura 20 - Inserindo uma declaração](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem20.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem20.png" alt="Figura 20 - Inserindo uma declaração"></p>
 
 &ensp;&ensp;&ensp;&ensp;Neste exemplo essa declaração serve apenas para iniciar o jogo escolhendo o modo e a dificuldade com dois slots personalizados.  
 &ensp;&ensp;&ensp;&ensp;Após realizado todas as alterações deve-se salvar e compilar o modelo.
 
 <p align="center">Figura 21 - Salvar e construir o modelo</p>  
 
-![Figura 21 - Salvar e construir o modelo](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem21.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem21.png" alt="Figura 21 - Salvar e construir o modelo"></p>
 
 <p align="center">Figura 22 - Mensagem de sucesso após construção do modelo</p>  
 
-![Figura 22 - Mensagem de sucesso após construção do modelo](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem22.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem22.png" alt="Figura 22 - Mensagem de sucesso após construção do modelo"></p>
 
 &ensp;&ensp;&ensp;&ensp;Também está disponibilizado no github o JSON que pode ser importado para realizar todos esses cadastrados de forma automática.
 
 <p align="center">Figura 23 - Importando JSON</p>  
 
-![Figura 23 - Importando JSON](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem23.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem23.png" alt="Figura 23 - Importando JSON"></p>
 
 &ensp;&ensp;&ensp;&ensp;Após isso, toda vez que é executada uma intenção será gerado um Callback para o servidor Lambda executando o método vinculado a esta intenção.
 
@@ -417,64 +417,64 @@ void publishReturnMessage()
 
 <p align="center">Figura 24 - Página inicial da AWS Amazon</p>  
 
-![Figura 24 - Página inicial da AWS Amazon](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem24.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem24.png" alt="Figura 24 - Página inicial da AWS Amazon"></p>
 
 <p align="center">Figura 25 - Página de login da AWS Amazon</p>  
 
-![Figura 25 - Página de login da AWS Amazon](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem25.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem25.png" alt="Figura 25 - Página de login da AWS Amazon"></p>
 
 <p align="center">Figura 26 - Selecionar o serviço Lambda</p>  
 
-![Figura 26 - Selecionar o serviço Lambda](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem26.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem26.png" alt="Figura 26 - Selecionar o serviço Lambda"></p>
 
 <p align="center">Figura 27 - Criar a função</p>  
 
-![Figura 27 - Criar a função](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem27.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem27.png" alt="Figura 27 - Criar a função"></p>
 
 <p align="center">Figura 28 - Escolher um nome e linguagem de programação</p>  
 
-![Figura 28 - Escolher um nome e linguagem de programação](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem28.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem28.png" alt="Figura 28 - Escolher um nome e linguagem de programação"></p>
 
 <p align="center">Figura 29 - Adicionar um gatilho</p>  
 
-![Figura 29 - Adicionar um gatilho](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem29.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem29.png" alt="Figura 29 - Adicionar um gatilho"></p>
 
 &ensp;&ensp;&ensp;&ensp;Nesta etapa será necessário o ID gerado na Amazon Alexa. A Figura 30 aponta o lugar que se obtém na Amazon Alexa. Na Figura 31 mostra onde deve ser inserido o ID da Amazon Alexa. Após a inserção do ID, clicar em salvar.
 
 <p align="center">Figura 30 - Utilizar a opção “Copy to clipboard”</p>  
 
-![Figura 30 - Utilizar a opção “Copy to clipboard”](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem30.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem30.png" alt="Figura 30 - Utilizar a opção “Copy to clipboard”"></p>
 
 <p align="center">Figura 31 - Escolher “Alexa IoT” e colar o código copiado anteriormente no “Skill ID”</p>  
 
-![Figura 31 - Escolher “Alexa IoT” e colar o código copiado anteriormente no “Skill ID”](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem31.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem31.png" alt="Figura 31 - Escolher “Alexa IoT” e colar o código copiado anteriormente no “Skill ID”"></p>
 
 &ensp;&ensp;&ensp;&ensp;Será necessário realizar o processo inverso, copiar o código ARN da função Lambda e colar no endpoint da Skill para ela conseguir acessar o backend.  A Figura 32 aponta onde se obtém na função Lambda. Na Figura 33mostra onde deve ser inserido o ID na Skill. Após a inserção do ID, clicar em salvar.
 
 <p align="center">Figura 32 - Copiar o “Function ARN”</p>  
 
-![Figura 32 - Copiar o “Function ARN”](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem32.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem32.png" alt="Figura 32 - Copiar o “Function ARN”"></p>
 
 <p align="center">Figura 33 - Colar o “Function ARN”</p>  
 
-![Figura 33 - Colar o “Function ARN”](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem33.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem33.png" alt="Figura 33 - Colar o “Function ARN”"></p>
 
 &ensp;&ensp;&ensp;&ensp;Deve ser realizado a configuração de permissão para a função criada, para isso deve-se seguir o passo-a-passo da Figura 34 até Figura 37.
 
 <p align="center">Figura 34 - Clicar no hiperlink</p>  
 
-![Figura 34 - Clicar no hiperlink](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem34.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem34.png" alt="Figura 34 - Clicar no hiperlink"></p>
 
 <p align="center">Figura 35 - Expandir e editar a política</p>  
 
-![Figura 35 - Expandir e editar a política](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem35.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem35.png" alt="Figura 35 - Expandir e editar a política"></p>
 
 &ensp;&ensp;&ensp;&ensp;Se as permissões corretas não forem concedidas, dificultará o acesso a determinados tópicos ou a execução de determinadas ações. Neste caso, define-se a política no nível mais permissivo. As configurações podem ser alteradas para restringir determinadas ações e tópicos conforme necessários, por isto muita atenção às permissões.  
 &ensp;&ensp;&ensp;&ensp;Na tela da Figura 36, incluir o código de permissão do AWS IoT seguindo o exemplo do Quadro 1.
 
 <p align="center">Figura 36 - Colar e salvar</p>  
 
-![Figura 36 - Colar e salvar](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem36.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem36.png" alt="Figura 36 - Colar e salvar"></p>
 
 ~~~JSON
 {
@@ -504,29 +504,29 @@ void publishReturnMessage()
 
 <p align="center">Figura 37 - Painel atualizado</p>  
 
-![Figura 37 - Painel atualizado](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem37.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem37.png" alt="Figura 37 - Painel atualizado"></p>
 
 &ensp;&ensp;&ensp;&ensp;O Lambda não tem acesso as bibliotecas/recursos do pacote ask_sdk, esse pacote seria o padrão para utilizar os recursos da Alexa com isso é necessário adicionar uma camada para o Lamba ter de onde buscar esse recurso, para isso na parte inferior do site clicar em “Add a Layer”.
 
 <p align="center">Figura 38 - Adicionando uma camada</p>  
 
-![Figura 38 - Adicionando uma camada](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem38.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem38.png" alt="Figura 38 - Adicionando uma camada"></p>
 
 &ensp;&ensp;&ensp;&ensp;Após isso, devemos especificar qual camada iremos adicionar no caso já disponibilizaram o pacote ask_sdk na url “arn:aws:lambda:us-east-1:173334852312:layer:ask-sdk-for-python-36:1”, desta forma deve-se utilizar a opção “Specify na ARN” e colar no campo este valor.
 
 <p align="center">Figura 39 - Especificando a camada</p>  
 
-![Figura 39 - Especificando a camada](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem39.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem39.png" alt="Figura 39 - Especificando a camada"></p>
 
 <p align="center">Figura 40 - Como ficará o item camada</p>  
 
-![Figura 40 - Como ficará o item camada](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem40.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem40.png" alt="Figura 40 - Como ficará o item camada"></p>
 
 &ensp;&ensp;&ensp;&ensp;No item “Code” é onde deverá ser feito a lógica após receber o JSON da Skill, esse código se encontra no github. Após subir o servidor ele já deverá se comunicar com a skill e vice-versa.
 
 <p align="center">Figura 41 - Código do backend</p>  
 
-![Figura 41 - Código do backend](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem41.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem41.png" alt="Figura 41 - Código do backend"></p>
 
 ## Alexa Presentation Language
 
@@ -548,37 +548,37 @@ void publishReturnMessage()
 
 <p align="center">Figura 42 - Página inicial DynamoDB</p>  
 
-![Figura 42 - Página inicial DynamoDB](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem42.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem42.png" alt="Figura 42 - Página inicial DynamoDB"></p>
 
 &ensp;&ensp;&ensp;&ensp;Criar a tabela informando o nome desejado.
 
 <p align="center">Figura 43 - Criação de tabela</p>  
 
-![Figura 43 - Criação de tabela](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem43.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem43.png" alt="Figura 43 - Criação de tabela"></p>
 
 &ensp;&ensp;&ensp;&ensp;No Lambda clicar no hiperlink da permissão para abrir a página de edição.
 
 <p align="center">Figura 44 - Permissão</p>  
 
-![Figura 44 - Permissão](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem44.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem44.png" alt="Figura 44 - Permissão"></p>
 
 &ensp;&ensp;&ensp;&ensp;Deve ser adicionado a permissão para acesso ao DynamoDB, desta forma clicar na opção “Add permissions -> Attach policies”.
 
 <p align="center">Figura 45 - Página de permissões</p>  
 
-![Figura 45 - Página de permissões](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem45.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem45.png" alt="Figura 45 - Página de permissões"></p>
 
 &ensp;&ensp;&ensp;&ensp;Procurar pela política “AmazonDynamoDBFullAccess” e clicar na opção “Attach policies”.
 
 <p align="center">Figura 46 - Adicionando nova permissão</p>  
 
-![Figura 46 - Adicionando nova permissão](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem46.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem46.png" alt="Figura 46 - Adicionando nova permissão"></p>
 
 &ensp;&ensp;&ensp;&ensp;Voltar a página do Lambda, e verificar se será apresentado na lista de permissões o DynamoDB.
 
 <p align="center">Figura 47 - Lista de permissões</p>  
 
-![Figura 47 - Lista de permissões](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem47.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem47.png" alt="Figura 47 - Lista de permissões"></p>
 
 ## Exemplos de utilização DynamoDB
 
@@ -691,7 +691,7 @@ def lambda_handler(event,context):
 
 <p align="center">Figura 48 - Estrutura do AWS IoT</p>  
 
-![Figura 48 - Estrutura do AWS IoT](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem48.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem48.png" alt="Figura 48 - Estrutura do AWS IoT"></p>
 
 &ensp;&ensp;&ensp;&ensp;A partir da Figura 49 está descrito o passo-a-passo de como criar uma “coisa”, ou um novo dispositivo, à função em AWS IoT, terminando na Figura X.  
 &ensp;&ensp;&ensp;&ensp;Em suma, os passos são os seguintes: Registro no Console do AWS IoT; Criação/registro de uma "Coisa" no console; Criação de um certificado TLS X.509; Criação de uma política para acessar os tópicos da AWS IoT; Anexando a Política ao Certificado; testes via MQTT.  
@@ -700,32 +700,32 @@ def lambda_handler(event,context):
 + Passo 1: Acessar a página do IoT Core, acessar o item “Things” e utilizar a opção “Create things”.  
 <p align="center">Figura 49 - Página inicial AWS IoT</p>  
 
-![Figura 49 - Página inicial AWS IoT](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem49.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem49.png" alt="Figura 49 - Página inicial AWS IoT"></p>
 
 + Passo 2: Utilizar a opção “Create single thing” e clicar em “Next”.  
 <p align="center">Figura 50 - Criação da “coisa”</p>  
 
-![Figura 50 - Criação da “coisa”](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem50.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem50.png" alt="Figura 50 - Criação da “coisa”"></p>
 
 + Passo 3: Inserir um novo nome e demais valores são opcionais.  
 <p align="center">Figura 51 - Propriedades da “coisa”</p>  
 
-![Figura 51 - Propriedades da “coisa”](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem51.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem51.png" alt="Figura 51 - Propriedades da “coisa”"></p>
 
 + Passo 4: Utilizar a opção “Auto-generate a new certificate (recommended)” e clicar em “Next”.  
 <p align="center">Figura 52 - Escolha do certificado</p>  
 
-![Figura 52 - Escolha do certificado](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem52.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem52.png" alt="Figura 52 - Escolha do certificado"></p>
 
 + Passo 5: Criar uma política. 
 <p align="center">Figura 53 - Política da “coisa”</p>  
 
-![Figura 53 - Política da “coisa”](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem53.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem53.png" alt="Figura 53 - Política da “coisa”"></p>
 
 + Passo 6: Inserir o código do Quadro 1 e alterar com os dados de região, ID da conta e alterar o nome ESP32_SP para o nome da “coisa”.  
 <p align="center">Figura 54 - Criação de política</p>  
 
-![Figura 54 - Criação de política](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem54.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem54.png" alt="Figura 54 - Criação de política"></p>
 
 ~~~JSON
 {
@@ -758,12 +758,12 @@ def lambda_handler(event,context):
 + Passo 7: Vincular a política e criar a “coisa”  
 <p align="center">Figura 55 - Vínculo da política</p>  
 
-![Figura 55 - Vínculo da política](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem55.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem55.png" alt="Figura 55 - Vínculo da política"></p>
 
 + Passo 8: Download de todos os certificados, esses certificados são os citados dentro do item “Secrets.h” para serem inseridos no código do Arduino.  
 <p align="center">Figura 56 - Download dos certificados</p>  
 
-![Figura 56 - Download dos certificados](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem56.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem56.png" alt="Figura 56 - Download dos certificados"></p>
 
 *******
 
@@ -781,7 +781,7 @@ Após isso compilar e utilizar a opção “Upload” para carregar o código de
 
 <p align="center">Figura 57 – Endpoint IoT Core</p>  
 
-![Figura 57 – Endpoint IoT Core](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem57.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem57.png" alt="Figura 57 – Endpoint IoT Core"></p>
 
 ### Ferramenta de testes MQTT Lambda
 
@@ -789,25 +789,25 @@ Após isso compilar e utilizar a opção “Upload” para carregar o código de
 
 <p align="center">Figura 58 - Configuração do tópico MQTT</p>  
 
-![Figura 58 - Configuração do tópico MQTT](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem58.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem58.png" alt="Figura 58 - Configuração do tópico MQTT"></p>
 
 <p align="center">Figura 59 - Configuração do tópico MQTT</p>  
 
-![Figura 59 - Configuração do tópico MQTT](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem59.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem59.png" alt="Figura 59 - Configuração do tópico MQTT"></p>
 
 &ensp;&ensp;&ensp;&ensp;Para realizar o teste basta inserir uma nova mensagem e utilizar a opção “Publish”, dentro do Arduino é possível ver os logs pelo canal escolhido e posteriormente a isto será enviado uma mensagem de sucesso novamente para a Amazon. Segue figuras com esse processo.
 
 <p align="center">Figura 60 - Envio da mensagem ao Arduino</p>  
 
-![Figura 60 - Envio da mensagem ao Arduino](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem60.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem60.png" alt="Figura 60 - Envio da mensagem ao Arduino"></p>
 
 <p align="center">Figura 61 - Log de recebimento no Arduino</p>  
 
-![Figura 61 - Log de recebimento no Arduino](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem61.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem61.png" alt="Figura 61 - Log de recebimento no Arduino"></p>
 
 <p align="center">Figura 62 - Log de sucesso IoT Core</p>  
 
-![Figura 62 - Log de sucesso IoT Core](https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem62.png)
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem62.png" alt="Figura 62 - Log de sucesso IoT Core"></p>
 
 # Referências
 
