@@ -809,6 +809,53 @@ Após isso compilar e utilizar a opção “Upload” para carregar o código de
 
 <p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem62.png" alt="Figura 62 - Log de sucesso IoT Core"></p>
 
+## Logs CloudWatch
+
+&ensp;&ensp;&ensp;&ensp;Por padrão ao se criar uma skill e essa esteja na AWS Lambda ou dentro do servidor criado automaticamente pela Amazon, é vinculado o serviço CloudWatch que gera os logs da sessão da skill sejam erro ou de execução, ou até mesmo logs manuais inseridos dentro do código fonte.  
+
+&ensp;&ensp;&ensp;&ensp;Para logs manuais, em Python, é necessário importar a biblioteca logger, criar uma instância e o nível do log a ser gerado. Segue no Quadro 7.  
+~~~Python
+#Biblioteca
+import logging
+
+#Criar uma nova instância
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+
+#Exemplo de uso
+logger.info("Locale is {} e {}".format(len(wordList), len(list_c)))
+~~~  
+
+&ensp;&ensp;&ensp;&ensp;Desta forma, é possível acessar esse serviço de duas formas, conforme será mostrado nas subseções a seguir.  
+
+### Servidor hospedado na Alexa  
+Caso seja servidor hospedado na própria Alexa, ir na aba “Code” e clicar no ícone “CloudWatch Logs”.  
+
+<p align="center">Figura 63 - Icone CloudWatch Logs</p>  
+
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem63.png" alt="Figura 63 - Icone CloudWatch Logs" align="center"></p>  
+
+&ensp;&ensp;&ensp;&ensp;Será aberta a página da CloudWatch, nela terá que selecionar o item “Log groups”, e selecionar algum registro. Esse registro constará com o que foi feito na seção, contendo o número da sessão, tempo inicial e final sendo possível visualizar em tempo real.  
+&ensp;&ensp;&ensp;&ensp;Obs.: Na parte superior a direita é possível ver um usuário com o prefixo “VoiceHubSSORole” esse usuário é gerado pela própria skill e não temos controle dele ou das permissões dele.  
+
+<p align="center">Figura 64 - CloudWatch item LogGroups</p>  
+
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem64.png" alt="Figura 64 - CloudWatch item LogGroups" align="center"></p>  
+
+&ensp;&ensp;&ensp;&ensp;Por fim, um exemplo de como o log será gerado.  
+
+<p align="center">Figura 65 - Exemplo de log</p>  
+
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem65.png" alt="Figura 65 - Exemplo de log" align="center"></p>  
+
+### Servidor hospedado na AWS Lambda
+
+&ensp;&ensp;&ensp;&ensp;Para verificar os logs gerados em uma skill hospedado na AWS Lambda, é necessário apenas procurar o serviço na barra de procurar e novamente entrar no item “Log Groups” que será apresentado os logs gerados na sessão ao realizar um teste pelo console do desenvolvedor ou pela própria Alexa.  
+
+<p align="center">Figura 66 - Exemplo de log lambda</p>  
+
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem66.png" alt="Figura 66 - Exemplo de log lambda" align="center"></p>  
+
 # Referências
 
 https://developer.amazon.com/en-US/docs/alexa/custom-skills/choose-the-invocation-name-for-a-custom-skill.html  
