@@ -1046,6 +1046,26 @@ banco = handler_input.attributes_manager.persistent_attributes
 
 &ensp;&ensp;&ensp;&ensp;Sendo que a variável “banco” irá receber todas as informações que já estão guardadas, com isso é possível manipular os dados e posteriormente utilizar o comando de salvar novamente.  
 
+# Fóruns
+
+&ensp;&ensp;&ensp;&ensp;A Amazon conta com diversos fóruns específicos para retirar dúvidas de como criar skills ou de recursos específicos dos serviços, sendo possível conversar com os desenvolvedores da Alexa. Será lista os principais fóruns e o slack da comunidade.  
+
+&ensp;&ensp;&ensp;&ensp;Fórum para postar ideias do que pode ser desenvolvido para a Alexa:  
+
+<p align="center">https://alexa.design/uservoice</p>
+
+&ensp;&ensp;&ensp;&ensp;Fórum voltado para serviços da AWS:  
+
+<p align="center">https://repost.aws</p>
+
+&ensp;&ensp;&ensp;&ensp;Fórum focado para retirar dúvidas de funcionamento ou como criar algum recurso da skill:  
+
+<p align="center">https://amazon.developer.forums.answerhub.com/index.html</p>
+
+&ensp;&ensp;&ensp;&ensp;Slack da comunidade que conta com os programadores da Alexa além de outros programadores:  
+
+<p align="center">https://alexacommunity.slack.com</p>
+
 # Referências
 
 https://developer.amazon.com/en-US/docs/alexa/custom-skills/choose-the-invocation-name-for-a-custom-skill.html  
