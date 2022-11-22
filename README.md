@@ -856,6 +856,196 @@ Caso seja servidor hospedado na própria Alexa, ir na aba “Code” e clicar no
 
 <p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem66.png" alt="Figura 66 - Exemplo de log lambda" align="center"></p>  
 
+# Informações adicionais
+
+&ensp;&ensp;&ensp;&ensp;Nos tópicos a seguir, seriam informações interessantes de ter em mente ao desenvolver uma skill.
+
+## Internacionalização
+
+&ensp;&ensp;&ensp;&ensp;Na computação, a internacionalização é o processo de projetar software para que possa ser adaptado a diferentes idiomas e regiões sem a necessidade de reescrever ou alterar o código fonte.  
+&ensp;&ensp;&ensp;&ensp;A internacionalização permite que você crie uma skill para a Alexa que suporte vários idiomas, mas todos os idiomas irão utilizar o mesmo servidor e consequentemente o mesmo código fonte. Quando o usuário faz uma solicitação, parte do JSON de entrada contém as informações de localidade do dispositivo que está usando. Sua skill pode usar essas informações para falar no idioma apropriado para a solicitação do usuário.  
+
+&ensp;&ensp;&ensp;&ensp;Existem duas formas possíveis para se realizar isso, a primeira seria identificar o valor do JSON e toda vez executar um "IF" para conseguir utilizar o idioma de entrada e retornasse a resposta do idioma adequado. Para skills extensas não seria ideal pois toda alteração poderia gerar uma grande manutenção, um grande esforço e mesmo assim poderia ocorrer erros.  
+
+&ensp;&ensp;&ensp;&ensp;Outra consideração ao pensar em uma estratégia de internacionalização para grandes skills é terceirizar a tradução para outra empresa. Obviamente, você não deseja enviar a eles seu código fonte para que eles possam atualizá-lo; portanto, as sequências de texto geralmente são colocadas em um arquivo separado que você pode enviar à empresa de tradução para edição.  
+
+### Modelo de interação - Parte 1  
+
+&ensp;&ensp;&ensp;&ensp;O console do desenvolvedor da Alexa já consta com uma opção para criar um modelo de forma simples, para isso você deve abrir a lista de idiomas e clicar na opção "Language Settings", conforme figura 67.  
+
+<p align="center">Figura 67 - Lista de idiomas</p>  
+
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem67.png" alt="Figura 67 - Lista de idiomas" align="center"></p>  
+
+&ensp;&ensp;&ensp;&ensp;Será aberta uma nova página, nesta página deve selecionar "Add new language", escolher o idioma desejado e clicar em "Save". Após salvar, será apresentado na lista o novo idioma adicionado. Na figura 68 é apresentado botão para adicionar um novo idioma e salvar.  
+
+<p align="center">Figura 68 - Configurações de idiomas</p>  
+
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem68.png" alt="Figura 68 - Configurações de idiomas" align="center"></p>
+
+&ensp;&ensp;&ensp;&ensp;Para ficar simples e não ser necessário adicionar novamente todas as intenções, slots etc. Você pode entrar no idioma onde consta já todas as configurações, ir à opção "Intents -> JSON Editor", copiar o conteúdo do json e traduzir manualmente as frases para então entrar no novo idioma e colar esse JSON traduzido e salvar esse novo modelos fazendo todos os registros de forma automática. Na figura 69 é apresentado onde se pode encontrar o JSON.  
+
+<p align="center">Figura 69 - Item JSON Editor</p>  
+
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem69.png" alt="Figura 69 - Item JSON Editor" align="center"></p>  
+
+&ensp;&ensp;&ensp;&ensp;Após esses passos é recomendado alterar o nome de invocação, caso não seja um nome próprio, buildar o novo modelo e realizar novos testes para validar o modelo de interação.  
+
+### Modelo de interação – Parte 2  
+
+&ensp;&ensp;&ensp;&ensp;Na primeira parte cuidamos dos dados de entrada, agora será feito os dados de saída para isso no código fonte serão necessárias algumas alterações.  
+
+&ensp;&ensp;&ensp;&ensp;Teremos que utilizar o conceito de interceptor, existem duas variantes de interceptores o de resposta que será executado após finalizar algum método e o de requisição que será executado antes de entrar no método. No caso do idioma é necessário utilizar o de requisição.  
+
+&ensp;&ensp;&ensp;&ensp;Para isso, devemos importar o componente "AbstractRequestInterceptor". Abaixo se encontra a linha padrão para importar os interceptores mais utilizados.  
+
+~~~Python
+from ask_sdk_core.dispatch_components import (AbstractRequestHandler, AbstractExceptionHandler,AbstractResponseInterceptor, AbstractRequestInterceptor)
+~~~  
+
+&ensp;&ensp;&ensp;&ensp;Em seguida, para ficar legível e de fácil controle o ideal é criar uma pasta com documentos JSON que irá tratar das strings de cada idioma. Você pode criar qualquer estrutura de JSON, neste caso deixamos simples apenas com um id para cada valor. Conforme figura 70.  
+
+<p align="center">Figura 70 - Idiomas JSON</p>  
+
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem70.png" alt="Figura 70 - Idiomas JSON" align="center"></p>  
+
+&ensp;&ensp;&ensp;&ensp;Agora devemos criar um método passando como parâmetro o tipo do interceptor, nesse método basicamente será identificar no JSON de entrada qual é a localidade recebida e abrir o arquivo JSON e passar os dados para a sessão.  
+
+~~~Python
+class LocalizationInterceptor(AbstractRequestInterceptor):
+
+    def process(self, handler_input):
+        locale = handler_input.request_envelope.request.locale
+        logger.info("Locale is {}".format(locale))
+        try:
+            with open("languages/"+str(locale)+".json") as language_data:
+                language_prompts = json.load(language_data)
+        except:
+            with open("languages/"+ str(locale[:2]) +".json") as language_data:
+                language_prompts = json.load(language_data)
+        handler_input.attributes_manager.request_attributes["_"] = language_prompts
+~~~  
+
+&ensp;&ensp;&ensp;&ensp;Por fim, nos demais métodos seria apenas buscar na sessão o valor do id necessário. No quadro a seguir é possível verificar um exemplo simples:  
+~~~Python
+class InitializeGameIntentHandler(AbstractRequestHandler):
+    """Handler for Initialize Game Intent."""
+    def can_handle(self, handler_input):
+        # type: (HandlerInput) -> bool
+        return ask_utils.is_intent_name("InitializeGameIntent")(handler_input)
+
+    def handle(self, handler_input):
+        # type: (HandlerInput) -> Response
+        language_prompts = handler_input.attributes_manager.request_attributes["_"] #Buscar o valor da sessão
+speak_output = language_prompts["PHRASE_REPEAT_SEQ"] #Buscar pela tag qual é a frase
+
+return (
+handler_input.response_builder
+.speak(speak_output)
+.set_should_end_session(False)
+.response
+)
+~~~  
+
+&ensp;&ensp;&ensp;&ensp;Ressalto que é necessário colocar no construtor este método criado.  
+
+~~~Python
+sb.add_global_request_interceptor(LocalizationInterceptor())
+~~~  
+
+## Dados persistentes em servidor hospedado Alexa  
+
+&ensp;&ensp;&ensp;&ensp;Diferente do que foi feito nas sessões para se utilizar o DynamoDB na skill, caso o servidor da skill seja hospedado na própria Alexa devemos utilizar os próprios componentes da ask-sdk disponibilizados pela Amazon, visto que o usuário dos serviços Lambdas é gerado de forma aleatória e não temos controle das regras de acesso dele e por isso não conseguimos realizar os mesmos passos descritos no item “DynamoDB”. Por isso o ideal é utilizar o serviço S3 bucket por ser simples a sua utilização, pelo código ser curto e os dados a serem salvados pequenos a utilização dele é o suficiente.  
+
+### Alterações no código  
+
+&ensp;&ensp;&ensp;&ensp;No arquivo de “requirements.txt” da skill, deve-se inserir a seguinte linha:  
+
+~~~Python
+ask-sdk-dynamodb-persistence-adapter==1.15.0
+~~~  
+
+&ensp;&ensp;&ensp;&ensp;Na figura 71 é possível validar como irá ficar após a inserção desta linha.
+
+<p align="center">Figura 71 - Arquivo 'requirements.txt'</p>  
+
+<p align="center"><img src="https://github.com/rafsarodrigues/Alexa-Tutorial-PT-BR/blob/main/Imagens%20Tutorial/Imagem70.png" alt="Figura 71 - Arquivo 'requirements.txt'" align="center"></p>  
+
+&ensp;&ensp;&ensp;&ensp;Abra o arquivo ‘lambda_function.py’, e insira as linhas que não existir:  
+
+~~~Python
+import os 
+import ask_sdk_core.utils as ask_utils
+from ask_sdk_s3.adapter import S3Adapter 
+s3_adapter = S3Adapter(bucket_name=os.environ["S3_PERSISTENCE_BUCKET"])
+~~~  
+
+&ensp;&ensp;&ensp;&ensp; Será necessário substituir a linha:
+
+~~~Python
+from ask_sdk_core.skill_builder import SkillBuilder
+~~~  
+
+&ensp;&ensp;&ensp;&ensp;Pela linha:  
+
+~~~Python
+from ask_sdk_core.skill_builder import CustomSkillBuilder
+~~~  
+
+&ensp;&ensp;&ensp;&ensp;Exemplo de como poderá ficar após essas alterações:
+
+~~~Python
+import logging
+import ask_sdk_core.utils as ask_utils
+import os
+from ask_sdk_s3.adapter import S3Adapter
+s3_adapter = S3Adapter(bucket_name=os.environ["S3_PERSISTENCE_BUCKET"])
+
+from ask_sdk_core.skill_builder import CustomSkillBuilder
+from ask_sdk_core.dispatch_components import AbstractRequestHandler
+from ask_sdk_core.dispatch_components import AbstractExceptionHandler
+from ask_sdk_core.handler_input import HandlerInput
+from ask_sdk_model import Response
+
+logger = logging.getLogger(name)
+logger.setLevel(logging.INFO)
+~~~  
+
+&ensp;&ensp;&ensp;&ensp;Na parte inferior do arquivo também será necessário alterar outra linha de código, no caso deverá procurar essa linha:  
+
+~~~Python
+sb = SkillBuilder()
+~~~  
+
+&ensp;&ensp;&ensp;&ensp; E substitui-la por esta linha:
+
+~~~Python
+sb = CustomSkillBuilder(persistence_adapter=s3_adapter)
+~~~  
+
+&ensp;&ensp;&ensp;&ensp;Após esses passos utilizar os botões “Save” e “Deploy” para testar se a skill irá abrir sem erros.  
+
+### Salvando dados
+
+&ensp;&ensp;&ensp;&ensp;Para salvar os dados é apenas necessário utilizar duas linhas:
+
+~~~Python
+handler_input.attributes_manager.persistent_attributes = banco
+handler_input.attributes_manager.save_persistent_attributes()
+~~~  
+
+&ensp;&ensp;&ensp;&ensp;Sendo o que o valor “banco” são os dados que precisa guardar.  
+
+### Recuperando os dados
+
+&ensp;&ensp;&ensp;&ensp;Para pegar os dados salvos é preciso apenas utilizar a linha:  
+
+~~~Python
+banco = handler_input.attributes_manager.persistent_attributes
+~~~  
+
+&ensp;&ensp;&ensp;&ensp;Sendo que a variável “banco” irá receber todas as informações que já estão guardadas, com isso é possível manipular os dados e posteriormente utilizar o comando de salvar novamente.  
+
 # Referências
 
 https://developer.amazon.com/en-US/docs/alexa/custom-skills/choose-the-invocation-name-for-a-custom-skill.html  
